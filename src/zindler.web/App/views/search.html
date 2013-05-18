@@ -3,8 +3,9 @@
 		data-bind="event: {keyup: showResults}, value: searchText, valueUpdate: 'keyup'" />
 	<span class="add-on"><i class="icon-search"></i></span>
 </div>
-<div data-bind="foreach: restaurants">
+<div class="container-fluid pre-scrollable" data-bind="foreach: restaurants">
 	<span class="badge badge-important" data-bind="text: AverageRating"></span>
 	<img data-bind="attr:{src: Photo, alt: Name}" />
+	<img data-bind="attr:{src: RatingImage, alt: AverageRating}" />
 	<h4 data-bind="html: Name"></h4>
 </div>

@@ -17,9 +17,9 @@ namespace zindler.web.Core.Queries
 			var consumerSecret = ConfigurationManager.AppSettings["Yelp.ConsumerSecret"];
 
 			var yelp = new Yelp(new Options { AccessToken = accessToken, AccessTokenSecret = accessTokenSecret, ConsumerKey = consumerKey, ConsumerSecret = consumerSecret });
-			var results = yelp.Search(name, "Houston");
+			var results = yelp.Search(name, "houston, tx").Result;
 
-			return results.Result.businesses.Select(x => new Restaurant
+			return results.businesses.Select(x => new Restaurant
 				                                             {
 					                                             Address = new Address
 						                                                       {

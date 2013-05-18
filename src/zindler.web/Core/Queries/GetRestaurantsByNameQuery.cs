@@ -11,16 +11,13 @@ namespace zindler.web.Core.Queries
 	{
 		public IList<Restaurant> Execute(string name)
 		{
-<<<<<<< HEAD
 		    var yelp = new Yelp(new Options());
-=======
 			var accessToken = ConfigurationManager.AppSettings["Yelp.AccessToken"];
 			var accessTokenSecret = ConfigurationManager.AppSettings["Yelp.AccessTokenSecret"];
 			var consumerKey = ConfigurationManager.AppSettings["Yelp.ConsumerKey"];
 			var consumerSecret = ConfigurationManager.AppSettings["Yelp.ConsumerSecret"];
 
 			var yelp = new Yelp(new Options { AccessToken = accessToken, AccessTokenSecret = accessTokenSecret, ConsumerKey = consumerKey, ConsumerSecret = consumerSecret });
->>>>>>> 68c22b23bb862f7a4690877b4f6aa6402ed74414
 			var results = yelp.Search(name, "Houston");
 
 			return results.Result.businesses.Select(x => new Restaurant

@@ -29,5 +29,6 @@ namespace zindler.data
         public string InspectorID { get; set; }
         public string InspectorName { get; set; }
         public string SiteCount { get; set; }
+        public Geometry Geometry { get; set; }
     }
 }

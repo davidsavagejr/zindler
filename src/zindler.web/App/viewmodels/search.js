@@ -4,6 +4,9 @@
     		router: router,
     		activate: function () {
     			system.log("Search View Activated!!");
+    			setTimeout(function() {
+    				$("#searchBox")[0].focus();
+    			}, 500);
     		},
     		showResults: function () {
     			var self = this;

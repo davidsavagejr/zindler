@@ -1,0 +1,16 @@
+﻿<section id="content" class="container">
+	<div class="hero-unit">
+		<img alt="Marvin Zindler" src="/Content/images/marvin_zindler.jpg" />
+		<h1>Zindler</h1>
+		<div>
+			<p>Restaurant Inspection Reports</p>
+		</div>
+	</div>
+	<!--ko compose: { 
+		model: router.activeItem, //wiring the router
+		afterCompose: router.afterCompose, //wiring the router
+		transition:'entrance', //use the 'entrance' transition when switching views
+		cacheViews: false //telling composition to keep views in the dom, and reuse them (only a good idea with singleton view models)
+	    }-->
+	<!--/ko-->
+</section>

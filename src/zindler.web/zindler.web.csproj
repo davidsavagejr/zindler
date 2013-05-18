@@ -133,7 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Core\Queries\GetRestaurantsByNameQuery.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -142,8 +142,6 @@
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Violation.cs" />
-    <Compile Include="Models\Facility.cs" />
-    <Compile Include="Models\Inspection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

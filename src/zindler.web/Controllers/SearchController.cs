@@ -19,9 +19,6 @@ namespace zindler.web.Controllers
 			 return query.Execute(name);
 		 } 
 
-         public IEnumerable<string> GetConfig()
-         {
-             return new List<string>() { ConfigurationManager.AppSettings["Yelp.AccessToken"] == "TEMP" ? "AccessToken Configured" : "NOT CONFIGURED!!"};
-         }
+         
 	 }
 }

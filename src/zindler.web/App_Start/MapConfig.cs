@@ -3,12 +3,11 @@ using zindler.web.Models.Mappings;
 
 namespace zindler.web.App_Start
 {
-    public class MapConfig
-    {
-        public static void Configure()
-        {
-            MapConfig.Configure();
-			  Mapper.Initialize(cfg => cfg.AddProfile<ZindlerProfile>());
-        }
-    }
+	public class MapConfig
+	{
+		public static void Configure()
+		{
+			Mapper.Initialize(cfg => cfg.AddProfile<ZindlerProfile>());
+		}
+	}
 }

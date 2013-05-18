@@ -7,12 +7,14 @@ using CsvHelper;
 
 namespace zindler.data
 {
-    public static class Seed
+    public sealed class InspectionData
     {
-        public static IEnumerable<InspectionRecord> ReadRecords()
+        private static readonly Lazy<IEnumerable<InspectionRecord>> records = new Lazy<IEnumerable<InspectionRecord>>(() => ReadRecords()); 
+        private static IEnumerable<InspectionRecord> ReadRecords()
         {
             var csv = new CsvReader(new StreamReader(Path.Combine(Environment.CurrentDirectory, "src", "inspection-data.csv")));
             return csv.GetRecords<InspectionRecord>();
         }
+        public static IEnumerable<InspectionRecord> Records { get { return records.Value; } }
     }
 }

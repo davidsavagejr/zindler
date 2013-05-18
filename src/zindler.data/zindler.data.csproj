@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="InspectionRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Seed.cs" />
+    <Compile Include="InspectionData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

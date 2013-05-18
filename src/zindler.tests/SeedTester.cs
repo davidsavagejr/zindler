@@ -15,7 +15,7 @@ namespace zindler.tests
         [Test]
         public void Should_read_data_from_csv()
         {
-            var data = Seed.ReadRecords();
+            var data = InspectionData.Records;
             data.ShouldNotBeNull();
             data.Any().ShouldBeTrue();
         }

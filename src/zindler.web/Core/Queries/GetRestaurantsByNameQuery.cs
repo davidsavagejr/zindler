@@ -10,6 +10,7 @@ namespace zindler.web.Core.Queries
 	{
 		public IList<Restaurant> Execute(string name)
 		{
+		    var yelp = new Yelp(new Options());
 			var results = yelp.Search(name, "Houston");
 
 			return results.Result.businesses.Select(x => new Restaurant

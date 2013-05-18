@@ -49,11 +49,16 @@
   <ItemGroup>
     <Compile Include="GetResaurantsByNameQueryTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeedTester.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zindler.data\zindler.data.csproj">
+      <Project>{ce32896a-55fa-4b52-b425-2f2bf09c269c}</Project>
+      <Name>zindler.data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zindler.web\zindler.web.csproj">
       <Project>{75767c5a-bf7d-4161-8aba-43f30dc93116}</Project>
       <Name>zindler.web</Name>

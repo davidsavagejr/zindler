@@ -11,11 +11,8 @@ namespace zindler.data
     {
         public static IEnumerable<InspectionRecord> ReadRecords()
         {
-            using (var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, "inspection-data")))
-            {
-                var csv = new CsvReader(streamReader);
-                return csv.GetRecords<InspectionRecord>();
-            }
+            var csv = new CsvReader(new StreamReader(Path.Combine(Environment.CurrentDirectory, "src", "inspection-data.csv")));
+            return csv.GetRecords<InspectionRecord>();
         }
     }
 }

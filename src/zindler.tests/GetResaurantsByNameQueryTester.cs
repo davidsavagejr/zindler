@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Linq;
+using NUnit.Framework;
 using zindler.web.Core.Queries;
 using Should;
 
@@ -14,6 +15,20 @@ namespace zindler.tests
 			var results = query.Execute("chipotle");
 
 			Assert.That(results.Count, Is.GreaterThan(5));
+		}
+		[Test, Ignore()]
+		public void Should_return_address_for_restaurant()
+		{
+			var query = new GetRestaurantsByNameQuery();
+			var results = query.Execute("chipotle");
+
+			var result = results.First();
+
+			result.Address.ShouldNotBeNull();
+			result.Address.StreetLine1.ShouldNotBeEmpty();
+			result.Address.City.ShouldNotBeEmpty();
+			result.Address.State.ShouldNotBeEmpty();
+			result.Address.PostalCode.ShouldNotBeEmpty();
 		}
 	}
 }

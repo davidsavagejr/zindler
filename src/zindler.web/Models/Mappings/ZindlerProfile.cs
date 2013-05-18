@@ -21,6 +21,7 @@ namespace zindler.web.Models.Mappings
 			CreateMap<Business, Restaurant>()
 				.ForMember(dest => dest.AverageRating, opt => opt.MapFrom(src => src.rating))
 				.ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.id))
+				.ForMember(dest => dest.Address, opt=>opt.MapFrom(src=>src.location))
 				.ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name))
 				.ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.phone))
 				.ForMember(dest => dest.Photo, opt => opt.MapFrom(src => src.image_url))

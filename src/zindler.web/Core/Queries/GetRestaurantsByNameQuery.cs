@@ -20,20 +20,12 @@ namespace zindler.web.Core.Queries
 			var consumerSecret = ConfigurationManager.AppSettings["Yelp.ConsumerSecret"];
 
 			var yelp = new Yelp(new Options { AccessToken = accessToken, AccessTokenSecret = accessTokenSecret, ConsumerKey = consumerKey, ConsumerSecret = consumerSecret });
-		    var options = new SearchOptions
+			var results = yelp.Search(new SearchOptions
 		        {
-		            GeneralOptions = new GeneralOptions {category_filter = "food", term = name, radius_filter = 40000, offset = 0},
+		            GeneralOptions = new GeneralOptions {category_filter = "food", term = name, radius_filter = 40000},
 		            LocationOptions = new LocationOptions {location = "houston, tx"}
-		        };
-			var results = yelp.Search(options).Result;
+		        }).Result;
 			var restaurants = results.businesses.Select(Mapper.Map<Restaurant>).ToList();
-
-            while (results.total >= restaurants.Count)
-            {
-                options.GeneralOptions.offset += 19;
-                results = yelp.Search(options).Result;
-                restaurants.AddRange(results.businesses.Select(Mapper.Map<Restaurant>).ToList());
-            }
 
 		    foreach (var restaurant in restaurants)
 		    {

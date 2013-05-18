@@ -11,7 +11,6 @@ namespace zindler.web.App_Start
     {
         public static void Configure()
         {
-            Mapper.CreateMap<InspectionRecord, Models.Restaurant>();
             MapConfig.Configure();
             
         }

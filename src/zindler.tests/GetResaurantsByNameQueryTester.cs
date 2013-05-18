@@ -8,12 +8,12 @@ namespace zindler.tests
 	public class GetResaurantsByNameQueryTester : DataTestBase
 	{
 		[Test]
-		public void Should_execute()
+		public void Should_return_list_of_restaurants()
 		{
 			var query = new GetRestaurantsByNameQuery();
 			var results = query.Execute("chipotle");
 
-			results.Count.ShouldEqual(20);
+			Assert.That(results.Count, Is.GreaterThan(5));
 		}
 	}
 }

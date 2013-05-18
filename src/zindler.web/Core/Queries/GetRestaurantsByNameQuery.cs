@@ -11,7 +11,6 @@ namespace zindler.web.Core.Queries
 	{
 		public IList<Restaurant> Execute(string name)
 		{
-		    var yelp = new Yelp(new Options());
 			var accessToken = ConfigurationManager.AppSettings["Yelp.AccessToken"];
 			var accessTokenSecret = ConfigurationManager.AppSettings["Yelp.AccessTokenSecret"];
 			var consumerKey = ConfigurationManager.AppSettings["Yelp.ConsumerKey"];

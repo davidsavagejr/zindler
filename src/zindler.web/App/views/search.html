@@ -1,8 +1,10 @@
 ﻿<div class="input-append">
-	<input class="input-large" id="inputIcon" type="text" placeholder="Restaurant name..." data-bind="event: {keyup: showResults}" />
+	<input class="input-large" id="inputIcon" type="text" placeholder="Restaurant name..." 
+		data-bind="event: {keyup: showResults}, value: searchText, valueUpdate: 'keyup'" />
 	<span class="add-on"><i class="icon-search"></i></span>
 </div>
 <div data-bind="foreach: restaurants">
-	<h3 data-bind="html: name"></h3>
-	<p data-bind="html: address"></p>
+	<span class="badge badge-important" data-bind="text: AverageRating"></span>
+	<img data-bind="attr:{src: Photo, alt: Name}" />
+	<h4 data-bind="html: Name"></h4>
 </div>

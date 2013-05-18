@@ -36,7 +36,12 @@ namespace zindler.web.Models.Mappings
 				.ForMember(dest => dest.Url, opt => opt.Ignore());
 
 		    CreateMap<InspectionRecord, Violation>()
-		        .ForMember(dest => dest.DateOfViolation, opt => opt.MapFrom(src => DateTime.Parse(src.InspectionDate)))
+                .ForMember(dest => dest.DateOfViolation, opt => opt.ResolveUsing(src =>
+                    {
+                        DateTime outD;
+                        DateTime.TryParse(src.InspectionDate, out outD);
+                        return outD;
+                    }))
 		        .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.ActivityType))
 		        .ForMember(dest => dest.Id, opt => opt.MapFrom(src => int.Parse(src.Account)));
 

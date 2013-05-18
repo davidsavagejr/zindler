@@ -3,22 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zindler.web", "zindler.web\zindler.web.csproj", "{75767C5A-BF7D-4161-8ABA-43F30DC93116}"
 EndProject
-<<<<<<< HEAD
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9EB95B26-4413-4AEB-9C74-BE6AF1722E31}"
-=======
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{23269860-A415-45D1-A86E-EC2EB5D00792}"
->>>>>>> 892d64f8dcf080cd0f14bdd1b204860d742a00ec
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zindler.tests", "zindler.tests\zindler.tests.csproj", "{A7636F73-DDA9-4237-B8B6-DF10FE4ED24B}"
-=======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zindler.data", "zindler.data\zindler.data.csproj", "{CE32896A-55FA-4B52-B425-2F2BF09C269C}"
->>>>>>> 892d64f8dcf080cd0f14bdd1b204860d742a00ec
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,17 +23,14 @@ Global
 		{75767C5A-BF7D-4161-8ABA-43F30DC93116}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75767C5A-BF7D-4161-8ABA-43F30DC93116}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75767C5A-BF7D-4161-8ABA-43F30DC93116}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
 		{A7636F73-DDA9-4237-B8B6-DF10FE4ED24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7636F73-DDA9-4237-B8B6-DF10FE4ED24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7636F73-DDA9-4237-B8B6-DF10FE4ED24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7636F73-DDA9-4237-B8B6-DF10FE4ED24B}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
 		{CE32896A-55FA-4B52-B425-2F2BF09C269C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE32896A-55FA-4B52-B425-2F2BF09C269C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE32896A-55FA-4B52-B425-2F2BF09C269C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE32896A-55FA-4B52-B425-2F2BF09C269C}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> 892d64f8dcf080cd0f14bdd1b204860d742a00ec
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

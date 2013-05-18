@@ -30,5 +30,13 @@ namespace zindler.tests
 			result.Address.State.ShouldNotBeEmpty();
 			result.Address.PostalCode.ShouldNotBeEmpty();
 		}
+		[Test, Ignore()]
+		public void Should_only_return_items_with_search_in_the_name()
+		{
+			var query = new GetRestaurantsByNameQuery();
+			var results = query.Execute("chipotle");
+
+			results.All(x => x.Name.Contains("chipotle")).ShouldBeTrue();
+		}
 	}
 }

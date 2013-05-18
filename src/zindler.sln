@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{232698
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zindler.data", "zindler.data\zindler.data.csproj", "{CE32896A-55FA-4B52-B425-2F2BF09C269C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{75767C5A-BF7D-4161-8ABA-43F30DC93116}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75767C5A-BF7D-4161-8ABA-43F30DC93116}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75767C5A-BF7D-4161-8ABA-43F30DC93116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE32896A-55FA-4B52-B425-2F2BF09C269C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE32896A-55FA-4B52-B425-2F2BF09C269C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE32896A-55FA-4B52-B425-2F2BF09C269C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE32896A-55FA-4B52-B425-2F2BF09C269C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

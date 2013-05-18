@@ -14,7 +14,9 @@ namespace zindler.data
     {
         private static readonly Lazy<List<InspectionRecord>> lazy = new Lazy<List<InspectionRecord>>(() => 
             {
-                var csv = new CsvReader(new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin\\src", "inspection-data.csv")));
+                var csv = new CsvReader(new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin\\src", "inspection-data.txt")));
+                //var csv = new CsvReader(new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "src", "inspection-data.txt")));
+                csv.Configuration.Delimiter = "\t";
                 csv.Configuration.QuoteNoFields = true;
                 return csv.GetRecords<InspectionRecord>().ToList();
             });

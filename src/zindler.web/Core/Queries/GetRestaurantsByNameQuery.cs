@@ -21,7 +21,7 @@ namespace zindler.web.Core.Queries
 			var yelp = new Yelp(new Options { AccessToken = accessToken, AccessTokenSecret = accessTokenSecret, ConsumerKey = consumerKey, ConsumerSecret = consumerSecret });
 			var results = yelp.Search(new SearchOptions{GeneralOptions = new GeneralOptions{category_filter = "food", term = name}, LocationOptions = new LocationOptions{location = "houston, tx"}}).Result;
 
-			return results.businesses.Where(x => x.name.Contains(name)).Select(Mapper.Map<Restaurant>).ToList();
+			return results.businesses.Where(x => x.name.StartsWith(name, StringComparison.CurrentCultureIgnoreCase)).Select(Mapper.Map<Restaurant>).ToList();
 		}
 	}
 }

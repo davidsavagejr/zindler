@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using NUnit.Framework;
 using zindler.web.Core.Queries;
 using Should;
@@ -36,7 +37,7 @@ namespace zindler.tests
 			var query = new GetRestaurantsByNameQuery();
 			var results = query.Execute("chipotle");
 
-			results.All(x => x.Name.Contains("chipotle")).ShouldBeTrue();
+			results.All(x => x.Name.StartsWith("CHIPOTLE", StringComparison.CurrentCultureIgnoreCase)).ShouldBeTrue();
 		}
 	}
 }

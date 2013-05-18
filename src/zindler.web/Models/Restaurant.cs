@@ -13,6 +13,6 @@ namespace zindler.web.Models
 		public string Phone { get; set; }
 		public string Photo { get; set; }
 		public double AverageRating { get; set; }
-		public IList<Review> Reviews { get; set; } 
+		public IList<YelpReview> Reviews { get; set; } 
 	}
 }

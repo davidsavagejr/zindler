@@ -2,7 +2,7 @@
 
 namespace zindler.web.Models
 {
-	public class Review
+	public class YelpReview
 	{
 		public double Rating { get; set; }
 		public DateTime DateOfReview { get; set; }

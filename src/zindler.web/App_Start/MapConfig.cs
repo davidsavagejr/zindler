@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
-using zindler.data;
+﻿using AutoMapper;
+using zindler.web.Models.Mappings;
 
 namespace zindler.web.App_Start
 {
@@ -11,9 +7,7 @@ namespace zindler.web.App_Start
     {
         public static void Configure()
         {
-            Mapper.CreateMap<InspectionRecord, Models.Restaurant>();
-            MapConfig.Configure();
-            
+			  Mapper.Initialize(cfg => cfg.AddProfile<ZindlerProfile>());
         }
     }
 }

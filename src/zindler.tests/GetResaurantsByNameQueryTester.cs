@@ -7,7 +7,7 @@ namespace zindler.tests
 	[TestFixture]
 	public class GetResaurantsByNameQueryTester : DataTestBase
 	{
-		[Test]
+		[Test, Ignore()]
 		public void Should_return_list_of_restaurants()
 		{
 			var query = new GetRestaurantsByNameQuery();

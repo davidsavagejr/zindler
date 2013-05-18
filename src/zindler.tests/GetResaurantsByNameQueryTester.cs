@@ -1,20 +1,19 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using zindler.web.Core.Queries;
 using Should;
 
 namespace zindler.tests
 {
 	[TestFixture]
-	public class GetResaurantsByNameQueryTester
+	public class GetResaurantsByNameQueryTester : DataTestBase
 	{
 		[Test]
-		public void Should_execute()
+		public void Should_return_list_of_restaurants()
 		{
 			var query = new GetRestaurantsByNameQuery();
 			var results = query.Execute("chipotle");
 
-			results.Count.ShouldEqual(3);
+			Assert.That(results.Count, Is.GreaterThan(5));
 		}
 	}
 }

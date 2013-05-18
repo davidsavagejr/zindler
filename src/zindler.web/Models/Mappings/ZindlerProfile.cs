@@ -42,7 +42,7 @@ namespace zindler.web.Models.Mappings
                         DateTime.TryParse(src.InspectionDate, out outD);
                         return outD;
                     }))
-		        .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.ActivityType))
+		        .ForMember(dest => dest.Description, opt => opt.ResolveUsing(src => src.ActivityType.Replace("\"", string.Empty)))
 		        .ForMember(dest => dest.Id, opt => opt.MapFrom(src => int.Parse(src.Account)));
 
 		}

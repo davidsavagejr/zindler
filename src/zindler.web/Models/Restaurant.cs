@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace zindler.web.Models
 {
+    [DebuggerDisplay("{Name}, {Address}")]
 	public class Restaurant
 	{
 		public string Id { get; set; }

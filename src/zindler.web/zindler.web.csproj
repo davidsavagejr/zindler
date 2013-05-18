@@ -155,8 +155,10 @@
     <Content Include="App\durandal\viewLocator.js" />
     <Content Include="App\durandal\viewModel.js" />
     <Content Include="App\durandal\viewModelBinder.js" />
+    <Content Include="App\viewmodels\about.js" />
     <Content Include="App\viewmodels\search.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\views\about.html" />
     <Content Include="App\views\search.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="App\durandal\widget.js" />

@@ -12,7 +12,7 @@ namespace zindler.tests
     [TestFixture]
     public class SeedTester
     {
-        [Test]
+        [Test, Explicit]
         public void Should_read_data_from_csv()
         {
             var data = InspectionData.Records;

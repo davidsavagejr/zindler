@@ -2,6 +2,7 @@
 using System.Linq;
 using AutoMapper;
 using YelpSharp.Data;
+using zindler.data;
 
 namespace zindler.web.Models.Mappings
 {
@@ -33,6 +34,12 @@ namespace zindler.web.Models.Mappings
 				.ForMember(dest => dest.Excerpt, opt => opt.MapFrom(src => src.excerpt))
 				.ForMember(dest => dest.Rating, opt => opt.MapFrom(src => src.rating))
 				.ForMember(dest => dest.Url, opt => opt.Ignore());
+
+		    CreateMap<InspectionRecord, Violation>()
+		        .ForMember(dest => dest.DateOfViolation, opt => opt.MapFrom(src => DateTime.Parse(src.InspectionDate)))
+		        .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.ActivityType))
+		        .ForMember(dest => dest.Id, opt => opt.MapFrom(src => int.Parse(src.Account)));
+
 		}
 	}
 

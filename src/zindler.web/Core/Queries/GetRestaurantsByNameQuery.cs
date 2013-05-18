@@ -16,7 +16,7 @@ namespace zindler.web.Core.Queries
 		public IList<Restaurant> Execute(string name)
 		{
 		    if (string.IsNullOrEmpty(name))
-		        return new List<Restaurant>();
+		        return new List<Restaurant>(); 
 
 			var accessToken = ConfigurationManager.AppSettings["Yelp.AccessToken"];
 			var accessTokenSecret = ConfigurationManager.AppSettings["Yelp.AccessTokenSecret"];

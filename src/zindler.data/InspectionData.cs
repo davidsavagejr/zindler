@@ -12,15 +12,24 @@ namespace zindler.data
 {
     public sealed class InspectionData
     {
-        private static readonly Lazy<List<InspectionRecord>> lazy = new Lazy<List<InspectionRecord>>(() => 
+        static IEnumerable<InspectionRecord> _records { get; set; }
+        static object mutex = new object();
+        public static IEnumerable<InspectionRecord> GetRecords(string path)
+        {
+            if (_records == null)
             {
-                var csv = new CsvReader(new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin\\src", "inspection-data.txt")));
-                //var csv = new CsvReader(new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "src", "inspection-data.txt")));
-                csv.Configuration.Delimiter = "\t";
-                csv.Configuration.QuoteNoFields = true;
-                return csv.GetRecords<InspectionRecord>().ToList();
-            });
-
-        public static IEnumerable<InspectionRecord> Records { get { return lazy.Value; } }
+                lock (mutex)
+                {
+                    if (_records == null)
+                    {
+                        var csv = new CsvReader(new StreamReader(path));
+                        csv.Configuration.Delimiter = "\t";
+                        csv.Configuration.QuoteNoFields = true;
+                        _records = csv.GetRecords<InspectionRecord>().ToList();
+                    }
+                }
+            }
+            return _records;
+        }
     }
 }

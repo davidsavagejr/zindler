@@ -1,13 +1,28 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace zindler
+namespace zindler.web.App_Start
 {
 	public class BundleConfig
 	{
 		// For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
 		public static void RegisterBundles(BundleCollection bundles)
 		{
+			bundles.Add(new StyleBundle("~/Content/css").Include(
+					"~/Content/bootstrap-responsive.css",
+					"~/Content/durandal.css",
+					"~/Content/site.css"));
+
+			bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+				"~/Scripts/jquery.blockUI.js",
+				"~/Scripts/jquery.validate.js",
+				"~/Scripts/jquery.validate.unobtrusive.js",
+				"~/Scripts/bootstrap.js",
+				"~/Scripts/underscore.js",
+				"~/Scripts/jquery.validate.unobtrusive-custom-for-bootstrap.js",
+				"~/Scripts/sammy-{version}.js",
+				"~/Scripts/knockout-{version}.js",
+				"~/Scripts/vanilla.js"));
+
 			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
 						"~/Scripts/jquery-{version}.js"));
 
@@ -22,8 +37,6 @@ namespace zindler
 			// ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
 			bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
 						"~/Scripts/modernizr-*"));
-
-			bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
 			bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
 						"~/Content/themes/base/jquery.ui.core.css",

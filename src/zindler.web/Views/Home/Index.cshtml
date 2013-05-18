@@ -1,11 +1,19 @@
-﻿<div class="container">
-	<div class="pull-left">
-	<img alt="Marvin Zindler" src="~/Content/images/marvin_zindler.jpg" />
-	</div>
-	<div class="hero-unit pull-right">
-		<h1>Zindler</h1>
-		<div>
-			<p>Restaurant Inspection Reports</p>
-		</div>
-	</div>
+﻿<div id="mainPage">
+    <div id="applicationHost">
+        Loading...
+    </div>
 </div>
+
+@section Scripts
+{
+	@*    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+	    *@
+	<script src="@Url.Content("~/App/durandal/amd/require.js")" data-main="@Url.Content("~/App/main.js")"></script>
+@*
+    }
+    else
+    {
+        <script src="@Url.Content("~/App/durandal/amd/require.js")" data-main="@Url.Content("~/App/main-built.js")"></script>
+    }*@
+}

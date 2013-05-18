@@ -17,6 +17,7 @@ namespace zindler.web.Core.Queries
 		{
 		    if (string.IsNullOrEmpty(name))
 		        return new List<Restaurant>();
+
 			var accessToken = ConfigurationManager.AppSettings["Yelp.AccessToken"];
 			var accessTokenSecret = ConfigurationManager.AppSettings["Yelp.AccessTokenSecret"];
 			var consumerKey = ConfigurationManager.AppSettings["Yelp.ConsumerKey"];
@@ -28,6 +29,7 @@ namespace zindler.web.Core.Queries
 		            GeneralOptions = new GeneralOptions {category_filter = "food", term = name, radius_filter = 40000},
 		            LocationOptions = new LocationOptions {location = "houston, tx"}
 		        }).Result;
+
 			var restaurants = results.businesses.Select(Mapper.Map<Restaurant>).ToList();
 
 		    foreach (var restaurant in restaurants)

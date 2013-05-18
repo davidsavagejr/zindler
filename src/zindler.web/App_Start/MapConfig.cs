@@ -7,6 +7,7 @@ namespace zindler.web.App_Start
     {
         public static void Configure()
         {
+            MapConfig.Configure();
 			  Mapper.Initialize(cfg => cfg.AddProfile<ZindlerProfile>());
         }
     }

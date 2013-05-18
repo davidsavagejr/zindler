@@ -35,7 +35,7 @@ namespace zindler.web.Core.Queries
 		        if (restaurant.Address.StreetLine1 != null)
 		        {
 
-                    var inspections = InspectionData.GetRecords(HostingEnvironment.MapPath("~/bin/src/inspection-data.txt")).Where(i => restaurant.Address.StreetLine1.ToLower().StartsWith(string.Format("{0} {1}", i.StNum, i.StName).ToLower())).ToList();
+                    var inspections = InspectionData.GetRecords(HostingEnvironment.MapPath("~/App_Data/inspection-data.txt")).Where(i => restaurant.Address.StreetLine1.ToLower().StartsWith(string.Format("{0} {1}", i.StNum, i.StName).ToLower())).ToList();
                     if (inspections.Any())
                         restaurant.Violations = inspections.Select(Mapper.Map<Violation>).ToList();
 		        }

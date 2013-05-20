@@ -11,16 +11,6 @@
     				$("#searchBox")[0].focus();
     			}, 500);
     		},
-    		showResults: function () {
-    			var self = this;
-    			var name = this.searchText();
-    			system.log(name);
-
-    			var results = data;
-    			//$.get('/api/search?name=' + name).done(function (results) {
-    				self.restaurants(results);
-    			//});
-    		},
     		restaurants: ko.observableArray([]),
     		searchText: ko.observable("")
     	};
@@ -28,10 +18,9 @@
     	$(document).on('keyup', '#searchBox', function () {
     		var name = $(this).val();
     		system.log(name);
-    		var results = data;
-    		//$.get('/api/search?name=' + name).done(function (results) {
+    		$.get('/api/search?name=' + name).done(function (results) {
     			viewModel.restaurants(results);
-    		//});
+    		});
     	});
 
     	return viewModel;
